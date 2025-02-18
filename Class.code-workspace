@@ -1,0 +1,574 @@
+{
+	"folders": [
+		{
+			"name": "Class",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/Users/wsack/UE_5.4"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Class Mac Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Debug",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Debug",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Class Mac Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Debug",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"DebugGame",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"DebugGame",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Class Mac DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"DebugGame",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Development",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Development",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Class Mac Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Development",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Test",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Test",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Class Mac Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Test",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Shipping",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Shipping",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Class Mac Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "Class Mac Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"Class",
+					"Mac",
+					"Shipping",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "ClassEditor Mac Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ClassEditor",
+					"Mac",
+					"Debug",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "ClassEditor Mac Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ClassEditor",
+					"Mac",
+					"Debug",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ClassEditor Mac Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "ClassEditor Mac Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ClassEditor",
+					"Mac",
+					"Debug",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "ClassEditor Mac DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ClassEditor",
+					"Mac",
+					"DebugGame",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "ClassEditor Mac DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ClassEditor",
+					"Mac",
+					"DebugGame",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ClassEditor Mac DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "ClassEditor Mac DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ClassEditor",
+					"Mac",
+					"DebugGame",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "ClassEditor Mac Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ClassEditor",
+					"Mac",
+					"Development",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "ClassEditor Mac Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ClassEditor",
+					"Mac",
+					"Development",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ClassEditor Mac Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			},
+			{
+				"label": "ClassEditor Mac Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"args": [
+					"ClassEditor",
+					"Mac",
+					"Development",
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/Users/wsack/UE_5.4"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch Class (Debug)",
+				"request": "launch",
+				"program": "/Users/wsack/Documents/Unreal Projects/Class/Binaries/Mac/UnrealGame-Mac-Debug.app/Contents/MacOS/UnrealGame-Mac-Debug",
+				"preLaunchTask": "Class Mac Debug Build",
+				"args": [
+				],
+				"cwd": "/Users/wsack/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Class (DebugGame)",
+				"request": "launch",
+				"program": "/Users/wsack/Documents/Unreal Projects/Class/Binaries/Mac/UnrealGame-Mac-DebugGame.app/Contents/MacOS/UnrealGame-Mac-DebugGame",
+				"preLaunchTask": "Class Mac DebugGame Build",
+				"args": [
+				],
+				"cwd": "/Users/wsack/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Class (Development)",
+				"request": "launch",
+				"program": "/Users/wsack/Documents/Unreal Projects/Class/Binaries/Mac/UnrealGame.app/Contents/MacOS/UnrealGame",
+				"preLaunchTask": "Class Mac Development Build",
+				"args": [
+				],
+				"cwd": "/Users/wsack/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Class (Test)",
+				"request": "launch",
+				"program": "/Users/wsack/Documents/Unreal Projects/Class/Binaries/Mac/UnrealGame-Mac-Test.app/Contents/MacOS/UnrealGame-Mac-Test",
+				"preLaunchTask": "Class Mac Test Build",
+				"args": [
+				],
+				"cwd": "/Users/wsack/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch Class (Shipping)",
+				"request": "launch",
+				"program": "/Users/wsack/Documents/Unreal Projects/Class/Binaries/Mac/UnrealGame-Mac-Shipping.app/Contents/MacOS/UnrealGame-Mac-Shipping",
+				"preLaunchTask": "Class Mac Shipping Build",
+				"args": [
+				],
+				"cwd": "/Users/wsack/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ClassEditor (Debug)",
+				"request": "launch",
+				"program": "/Users/wsack/UE_5.4/Engine/Binaries/Mac/UnrealEditor-Mac-Debug.app/Contents/MacOS/UnrealEditor-Mac-Debug",
+				"preLaunchTask": "ClassEditor Mac Debug Build",
+				"args": [
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject"
+				],
+				"cwd": "/Users/wsack/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ClassEditor (DebugGame)",
+				"request": "launch",
+				"program": "/Users/wsack/UE_5.4/Engine/Binaries/Mac/UnrealEditor-Mac-DebugGame.app/Contents/MacOS/UnrealEditor-Mac-DebugGame",
+				"preLaunchTask": "ClassEditor Mac DebugGame Build",
+				"args": [
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject"
+				],
+				"cwd": "/Users/wsack/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Launch ClassEditor (Development)",
+				"request": "launch",
+				"program": "/Users/wsack/UE_5.4/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor",
+				"preLaunchTask": "ClassEditor Mac Development Build",
+				"args": [
+					"/Users/wsack/Documents/Unreal Projects/Class/Class.uproject"
+				],
+				"cwd": "/Users/wsack/UE_5.4",
+				"type": "lldb"
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Mac Development Build",
+				"program": "/Users/wsack/UE_5.4/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/Users/wsack/Documents/Unreal Projects/Class/Class.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/Users/wsack/UE_5.4"
+			}
+		]
+	}
+}

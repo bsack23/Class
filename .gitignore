@@ -72,3 +72,9 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Downloaded resources
+Content/Collections/*
+
+# Starter content
+Content/StarterContent/*

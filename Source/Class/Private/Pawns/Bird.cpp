@@ -4,6 +4,8 @@
 // include these headers because of forward declaration
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Camera/CameraComponent.h"
 
 // Sets default values 
 // This is the class constructor! runs once when we make a new instance of the class
@@ -19,6 +21,17 @@ ABird::ABird() {
   BirdMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BirdMesh"));
   // attach it to the Root Component so they all move together
   BirdMesh->SetupAttachment(GetRootComponent());
+
+  // make Player0 possess this pawn - E means its an enum
+  AutoPossessPlayer = EAutoReceiveInput::Player0;
+
+  SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+  SpringArm->SetupAttachment(Capsule);
+  SpringArm->TargetArmLength = 300.f;
+
+  ViewCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("ViewCamera"));
+  ViewCamera->SetupAttachment(SpringArm);
+
 }
 
 // Called when the game starts or when spawned

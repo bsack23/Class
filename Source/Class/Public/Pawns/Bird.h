@@ -5,9 +5,13 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 // this is only here temporarily until we forward declare!
-#include "Components/CapsuleComponent.h"
+//#include "Components/CapsuleComponent.h"
 // this include must be last!!
 #include "Bird.generated.h"
+
+// forward declarations here
+class UCapsuleComponent;
+class USkeletalMeshComponent;
 
 UCLASS()
 class CLASS_API ABird : public APawn {
@@ -31,4 +35,8 @@ public:
 private:
   UPROPERTY(VisibleAnywhere)
   UCapsuleComponent *Capsule; 
+
+  UPROPERTY(VisibleAnywhere)
+  USkeletalMeshComponent *BirdMesh;
+
 };

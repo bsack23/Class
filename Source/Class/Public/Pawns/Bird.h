@@ -6,6 +6,7 @@
 #include "GameFramework/Pawn.h"
 // this is only here temporarily until we forward declare!
 #include "Components/CapsuleComponent.h"
+// this include must be last!!
 #include "Bird.generated.h"
 
 UCLASS()

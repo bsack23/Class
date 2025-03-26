@@ -5,7 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Item.generated.h"
-
+// forward declarations
+class UStaticMeshComponent;
+class USphereComponent;
+// REMEMBER to change the name of the API
+// if your project is not named Class
 UCLASS()
 class CLASS_API AItem : public AActor {
   GENERATED_BODY()
@@ -29,14 +33,25 @@ protected:
   UPROPERTY(EditAnywhere, BlueprintReadWrite)
   float RotationRate = 40.f;
 
-  // UFUNCTION(BlueprintPure) // returns a value on blueprint
-  // float TransformedSin();
+  UFUNCTION()
+  void OnOverlapBegin(class UPrimitiveComponent *OverlappedComp,
+                      class AActor *OtherActor,
+                      class UPrimitiveComponent *OtherComp,
+                      int32 OtherBodyIndex, bool bFromSweep,
+                      const FHitResult &SweepResult);
 
-  // UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-  // UStaticMeshComponent *ItemMesh;
-  // end NEW
+  UFUNCTION()
+  void OnOverlapEnd(class UPrimitiveComponent *OverlappedComp,
+                    class AActor *OtherActor,
+                    class UPrimitiveComponent *OtherComp, int32 OtherBodyIndex);
 
-  // NEW!!!
+  UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+  UStaticMeshComponent *ItemMesh;
+
+  /** sphere component */
+  UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+  class USphereComponent *Sphere;
+
 private:
   UPROPERTY(VisibleAnywhere, BlueprintReadOnly,
             meta = (AllowPrivateAccess = "true"))

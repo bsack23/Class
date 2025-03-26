@@ -3,23 +3,30 @@
 // https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Core/Math/FMath/PerlinNoise1D?application_version=5.5
 
 #include "Items/Item.h"
-// NEW!!
+
+#include "Components/SphereComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Math/UnrealMathUtility.h" // for Perlin & sin
-// end NEW
 
 // Sets default values
 AItem::AItem() {
   // Set this actor to call Tick() every frame.  You can turn this off to
   // improve performance if you don't need it.
   PrimaryActorTick.bCanEverTick = true;
-  // NEW!!!
-  // ItemMesh =
-  //     CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
-  // RootComponent = ItemMesh;
-  // end NEW
-}
+  // create static mesh and set it as root component
+  ItemMesh =
+      CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent"));
+  RootComponent = ItemMesh;
+  // create sphere for overlap and attach it to root component
+  Sphere = CreateDefaultSubobject<USphereComponent>(TEXT("Sphere"));
+  Sphere->InitSphereRadius(150.0f);
+  Sphere->SetupAttachment(RootComponent);
+  // set up a notification for when this component
+  // overlaps something
+  Sphere->OnComponentBeginOverlap.AddDynamic(this, &AItem::OnOverlapBegin);
 
+  Sphere->OnComponentEndOverlap.AddDynamic(this, &AItem::OnOverlapEnd);
+}
 // Called when the game starts or when spawned
 void AItem::BeginPlay() { Super::BeginPlay(); }
 
@@ -27,7 +34,6 @@ void AItem::BeginPlay() { Super::BeginPlay(); }
 void AItem::Tick(float DeltaTime) {
   Super::Tick(DeltaTime);
 
-  // NEW \/
   float MovementRate = 50.f;
   // float RotationRate = 40.f;
   //    AddActorWorldOffset(FVector(MovementRate * DeltaTime, 0.f, 0.f));
@@ -45,4 +51,26 @@ void AItem::Tick(float DeltaTime) {
     // GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Cyan, Message);
   }
   // end NEW
+}
+void AItem::OnOverlapBegin(class UPrimitiveComponent *OverlappedComp,
+                           class AActor *OtherActor,
+                           class UPrimitiveComponent *OtherComp,
+                           int32 OtherBodyIndex, bool bFromSweep,
+                           const FHitResult &SweepResult) {
+  if (OtherActor && (OtherActor != this) && OtherComp) {
+    // put code to execute on overlap begin here
+    const FString OtherActorName = OtherActor->GetName();
+    if (GEngine) {
+      GEngine->AddOnScreenDebugMessage(1, 3.f, FColor::Red, OtherActorName);
+    }
+  }
+}
+
+void AItem::OnOverlapEnd(class UPrimitiveComponent *OverlappedComp,
+                         class AActor *OtherActor,
+                         class UPrimitiveComponent *OtherComp,
+                         int32 OtherBodyIndex) {
+  if (OtherActor && (OtherActor != this) && OtherComp) {
+    // put code to execute on overlap end here
+  }
 }

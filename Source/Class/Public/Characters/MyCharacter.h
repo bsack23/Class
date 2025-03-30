@@ -52,6 +52,11 @@ public:
 
   // add these
 private:
+  // jump input action
+  UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input,
+            meta = (AllowPrivateAccess = "true"))
+  UInputAction *JumpAction;
+  // end jump input action
   UPROPERTY(VisibleAnywhere)
   USpringArmComponent *CameraBoom;
 

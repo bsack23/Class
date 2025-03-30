@@ -32,18 +32,19 @@ protected:
 
   UPROPERTY(EditAnywhere, BlueprintReadWrite)
   float RotationRate = 40.f;
+  // add 'virtual' to these so they can be customized in child classes
+  UFUNCTION()
+  virtual void OnOverlapBegin(class UPrimitiveComponent *OverlappedComp,
+                              class AActor *OtherActor,
+                              class UPrimitiveComponent *OtherComp,
+                              int32 OtherBodyIndex, bool bFromSweep,
+                              const FHitResult &SweepResult);
 
   UFUNCTION()
-  void OnOverlapBegin(class UPrimitiveComponent *OverlappedComp,
-                      class AActor *OtherActor,
-                      class UPrimitiveComponent *OtherComp,
-                      int32 OtherBodyIndex, bool bFromSweep,
-                      const FHitResult &SweepResult);
-
-  UFUNCTION()
-  void OnOverlapEnd(class UPrimitiveComponent *OverlappedComp,
-                    class AActor *OtherActor,
-                    class UPrimitiveComponent *OtherComp, int32 OtherBodyIndex);
+  virtual void OnOverlapEnd(class UPrimitiveComponent *OverlappedComp,
+                            class AActor *OtherActor,
+                            class UPrimitiveComponent *OtherComp,
+                            int32 OtherBodyIndex);
 
   UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
   UStaticMeshComponent *ItemMesh;

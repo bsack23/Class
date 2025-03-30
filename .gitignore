@@ -80,3 +80,5 @@ Content/StylizedNaturePack
 Content/Police_girl
 # Starter content
 Content/StarterContent/*
+# mac stuff
+*/.DS_Store

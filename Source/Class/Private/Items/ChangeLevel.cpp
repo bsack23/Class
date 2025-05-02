@@ -3,7 +3,7 @@
 #include "Items/ChangeLevel.h"
 #include "Characters/MyCharacter.h"
 #include "Kismet/GameplayStatics.h"
-#include "Kismet/KismetSystemLibrary.h"
+
 // check it out
 // https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/Kismet/UGameplayStatics/OpenLevel
 
@@ -24,7 +24,6 @@ void AChangeLevel::OnOverlapBegin(class UPrimitiveComponent *OverlappedComp,
     FString CurrentLevel = TheWorld->GetMapName();
 
     if (CurrentLevel == CurrLevel) {
-
       UGameplayStatics::OpenLevel(TheWorld, ToLevel);
     } else {
       UGameplayStatics::OpenLevel(TheWorld, CurrLevel);

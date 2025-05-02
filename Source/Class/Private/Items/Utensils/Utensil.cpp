@@ -24,6 +24,8 @@ void AUtensil::OnOverlapBegin(class UPrimitiveComponent *OverlappedComp,
     ItemMesh->AttachToComponent(MyCharacter->GetMesh(), TransformRules,
                                 FName("RightHandSocket"));
     RotationRate = 0;
+    // experiment
+    EquippedState = true;
   }
 }
 

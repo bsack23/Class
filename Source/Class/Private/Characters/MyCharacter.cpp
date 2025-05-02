@@ -107,3 +107,12 @@ void AMyCharacter::SetupPlayerInputComponent(
     // end jumping
   }
 }
+
+void AMyCharacter::IncCoins() {
+  Coins++;
+  if (GEngine) {
+    // const FString CoinVal =
+    FString CoinVal = FString::Printf(TEXT("%d"), Coins);
+    GEngine->AddOnScreenDebugMessage(1, 3.f, FColor::Red, CoinVal);
+  }
+}

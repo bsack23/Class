@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 // add this
+#include "CharacterTypes.h"
 #include "InputActionValue.h"
 #include "MyCharacter.generated.h"
 
@@ -51,6 +51,12 @@ public:
       class UInputComponent *PlayerInputComponent) override;
 
   // add these
+  // refactor coin collection nonsense
+  UPROPERTY(EditAnywhere, BlueprintReadWrite)
+  int Coins = 0;
+
+  void IncCoins();
+
 private:
   // jump input action
   UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input,
@@ -62,4 +68,6 @@ private:
 
   UPROPERTY(VisibleAnywhere)
   UCameraComponent *ViewCamera;
+
+  ECharacterState CharacterState = ECharacterState::ECS_Unequipped;
 };
